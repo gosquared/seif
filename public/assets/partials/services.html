@@ -1,5 +1,5 @@
 <header>
-	<h1>Showing all services</h1>
+	<h1>Showing {{search.instances}} services</h1>
 	
 	<select class="instances" ng-model="search.instances">
 		<option selected value="">All</option>
@@ -17,6 +17,9 @@
 			<p>{{service.description}}</p>
 			
 			<small><b>Used on:</b>
+				<span class="tag" ng-repeat="instance in service.instances">{{instance}}</span>
+			</small>
+			<small><b>Tags:</b>
 				<span class="tag" ng-repeat="tag in service.tags">{{tag}}</span>
 			</small>
 		</a>
