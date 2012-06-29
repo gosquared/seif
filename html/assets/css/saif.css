@@ -1,0 +1,139 @@
+* {
+	margin: 0;
+	padding: 0;
+	
+	outline: none;
+	
+	-webkit-transition: opacity .25s, background-color .25s, color .25s;
+	transition: opacity .25s, background-color .25s, color .25s;
+}
+
+body {
+	background: #579ec7;
+	font: 16px/25px "Helvetica Neue", sans-serif;
+	color: #586770;
+	
+	width: 980px;
+	margin: 50px auto;
+}
+	body.error { background: #c6423b; }
+	body.success { background: #7bbe2c; }
+	
+h1 {
+	font-size: 40px;
+	line-height: 40px;
+}
+
+select {
+	-webkit-appearance: none;
+	border: none;
+	
+	font: 18px "Helvetica Neue", sans-serif;
+	color: #8699a4;
+	background: #e4edf2 url('../img/select.png') no-repeat 100% 50%;
+	padding: 10px 40px 10px 20px;
+}
+
+#top {
+	position: relative;
+	overflow: hidden;
+}
+	#logo {
+		float: left;
+		width: 64px;
+		height: 58px;
+		margin-right: 25px;
+	}
+	#top ul, #top li {
+		float: left;
+		list-style: none;
+	}
+		#top li a {
+			display: block;
+			float: left;
+			padding: 15px 25px;
+
+			color: #fff;
+			font-weight: bold;
+			text-decoration: none;
+			
+			opacity: .5;
+		}
+			#top li a:hover {
+				opacity: .75;
+			}
+			#top li.active a {
+				opacity: 1;
+			}
+			
+#content {
+	background: #fff;
+	padding: 30px 40px;
+	margin: 40px 0;
+	
+	border-radius: 5px;
+}
+	#content header {
+		overflow: hidden;
+		padding-bottom: 25px;
+	}
+		#content header h1 {
+			float: left;
+		}
+		#content select {
+			float: right;
+		}
+		
+.services {
+	list-style: none;
+	margin-bottom: -30px;
+}
+	.services li {
+		margin: 0 -40px;
+		border-top: 1px solid #dfe9ee;
+	}
+		.services li:last-child a {
+			border-radius: 0 0 5px 5px;
+		}
+		.services li h2 {
+			font-size: 29px;
+			line-height: 32px;
+			font-weight: 300;
+			
+			color: #546f7e;
+		}
+		.services li a {
+			display: block;
+			padding: 30px 40px;
+			
+			position: relative;
+			overflow: hidden;
+			
+			color: #8ea1ab;
+			text-decoration: none;
+		}
+			.services li a:hover {
+				background: #f4f8fa;
+			}
+		.services li small {
+			position: absolute;
+			right: 40px;
+			top: 50%;
+			margin-top: -18px;
+			
+			font-size: 15px;
+			line-height: 18px;
+			text-align: right;
+		}
+			.services li small b {
+				display: block;
+				font-size: 13px;
+			}
+			
+footer {
+	opacity: .3;
+
+	font-size: 13px;
+	color: #000;
+	text-align: center;
+}
