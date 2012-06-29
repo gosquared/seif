@@ -217,6 +217,17 @@ footer {
 	text-align: center;
 }
 
+.no-services {
+	text-align: center;
+	padding: 160px 0 90px;
+	font-weight: lighter;
+	
+	background: url('../img/sad.png') no-repeat 50% 70px;
+}
+	.no-services:empty {
+		display: none;
+	}
+
 .tag {
 	margin-right: 10px;
 	background: rgba(161,207,233,.2);

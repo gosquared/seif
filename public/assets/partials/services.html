@@ -9,7 +9,7 @@
 		<option value="ruby-2">ruby-2</option>
 	</select>
 </header>
-<h1>{{services | filter:search | no_services_description}}</h1>
+<h2 class="no-services">{{services | filter:search | no_services_description}}</h2>
 <ul class="services">
 	<li ng-repeat="service in services | filter:search | orderBy:'name'">
 		<a href="#/service/{{service.name}}">
