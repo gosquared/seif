@@ -28,6 +28,15 @@ b {
 	font-weight: 500;
 }
 
+pre, code {
+	display: inline-block;
+	padding: 2px 8px;
+	margin-left: -8px;
+
+	background: #fff8ec;
+	color: #937b51;
+}
+
 p {
 	color: #8ea1ab;
 }
