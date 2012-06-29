@@ -1,8 +1,28 @@
 <header>
-	<h1 ng-model="service.name"></h1>
+	<h1 ng-model="service.name">Service name <span class="status"></span></h1>
 </header>
 
-<p ng-model="service.description"></p>
+<p ng-model="service.description">This is but a mere description for our service. It describes very well.</p>
+
+<dl>
+	<dt>Tags</dt>
+	<dd>
+		<span>ruby</span>, <span>1.9.3</span>
+	</dd>
+	
+	<dt>Profile</dt>
+	<dd>
+		key => value<br>
+		key => value<br>
+		whatever
+	</dd>
+	
+	<dt>Repository URL</dt>
+	<dd><a href="http://visualidiot.com">http://visualidiot.com</a></dd>
+	
+	<dt>Directory URL</dt>
+	<dd><a href="http://visualidiot.com">http://visualidiot.com/lolcookies.html</a></dd>
+</dl>
 
 <h4>Tags</h4>
 <p>tag, tag, tag</p>
