@@ -24,7 +24,7 @@ h1 {
 	line-height: 40px;
 }
 
-select {
+select.instances {
 	-webkit-appearance: none;
 	border: none;
 	

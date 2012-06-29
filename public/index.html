@@ -2,62 +2,27 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Saif</title>
-		
+		<title>Seif</title>
+		<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <script src="http://code.angularjs.org/angular-resource-1.0.1.min.js"></script>
+    <script src="/assets/js/seif.js"></script>
+    <script src="/assets/js/modules/Service.js"></script>
+    <script src="/assets/js/modules/Instance.js"></script>
 		<link rel="stylesheet" href="assets/css/saif.css">
 	</head>
-	<body class="login">
+	<body class="login" ng-app="seif">
 		<header id="top">
 			<img id="logo" src="assets/img/logo.png" alt="Saif">
 			
 			<ul>
-				<li class="active"><a href="#">Instances</a></li>
-				<li><a href="#">Services</a></li>
+				<li class="active"><a href="#">Services</a></li>
+				<li><a href="#">Instances</a></li>
 				<li><a href="#">Owners</a></li>
 			</ul>
 		</header>
 		
-		<section id="content">
-			<header>
-				<h1>Showing all services</h1>
-				
-				<select class="services">
-					<option selected>All</option>
-					<option>nodejs-1</option>
-					<option>nodejs-2</option>
-					<option>nodejs-3</option>
-					<option>aspnet-1</option>
-					<option>aspnet-2</option>
-					<option>php-1</option>
-				</select>
-			</header>
+		<section id="content" ng-view>
 			
-			<ul class="services">
-				<li class="nodejs-1 php-1">
-					<a href="service.html">
-						<h2>Casa</h2>
-						<p>This is just a little description of Casa. Neat, huh?</p>
-						
-						<small><b>Used on:</b> nodejs-1, php-1</small>
-					</a>
-				</li>
-				<li class="nodejs-1 nodejs-2 php-1">
-					<a href="service.html">
-						<h2>Casa</h2>
-						<p>This is just a little description of Casa. Neat, huh?</p>
-						
-						<small><b>Used on:</b> nodejs-1, nodejs-2, php-1</small>
-					</a>
-				</li>
-				<li class="nodejs-1 nodejs-2">
-					<a href="service.html">
-						<h2>Casa</h2>
-						<p>This is just a little description of Casa. Neat, huh?</p>
-						
-						<small><b>Used on:</b> nodejs-1, nodejs-2</small>
-					</a>
-				</li>
-			</ul>
 		</section>
 		
 		<footer>Nothing interesting here.</footer>
