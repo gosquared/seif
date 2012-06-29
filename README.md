@@ -1,13 +1,12 @@
 # Seif
 
-Exposes info about web services and the customers that they belong to.
-
-I wanted to keep track of all my clients and the websites which I host
-for them, expose these details to Chef and hook it all up to my billing
-system (FreeAgent).
+I wanted to keep track of all my web hosting customers and the websites
+which I host for them. Exposing these details to Chef via an API and
+hook it all up to my billing system (FreeAgent). There is room for
+integration with a payment gateway such as GoCardless.
 
 Self-contained, leveraging SQLite for storage. Accessible via a RESTful
-api.
+API.
 
 ## Installation
 
