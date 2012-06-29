@@ -12,6 +12,12 @@ module Seif
           end
         end
       end
+
+      # MOCKS, remove when the models are up
+      MOCKS_PATH = File.expand_path("../mocks", __FILE__)
+      def mock(file)
+        Oj.load(File.read("#{MOCKS_PATH}/#{file}"))
+      end
     end
   end
 end
