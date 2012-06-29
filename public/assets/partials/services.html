@@ -16,6 +16,9 @@
 			<h2>{{service.name}} <span class="status {{service.active}}" title="Check whether the service is up. If it's green, it's up."></span></h2>
 			<p>{{service.description}}</p>
 			
+			<small><b>Instances:</b>
+				<span class="tag" ng-repeat="instance in service.instances">{{instance}}</span>
+			</small>
 			<small><b>Tags:</b>
 				<span class="tag" ng-repeat="tag in service.tags">{{tag}}</span>
 			</small>
