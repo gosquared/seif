@@ -29,6 +29,5 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency 'grape', '~> 0.2.0'
   gem.add_runtime_dependency 'oj', '~> 1.2.11'
-  gem.add_runtime_dependency 'sequel', '~> 3.36.1'
   gem.add_runtime_dependency 'unicorn', '~> 4.3.0'
 end
