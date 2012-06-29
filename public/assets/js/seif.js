@@ -9,36 +9,10 @@ angular.module('seif', [
 			controller:ServiceList, templateUrl:'/assets/partials/services.html'}).
 		when('/service/:name', {
 			controller:ServiceController, templateUrl:'/assets/partials/service.html'}).
+		when('/service/:name/edit', {
+			controller:EditServiceController, templateUrl:'/assets/partials/edit_service.html'}).
 		otherwise({redirectTo:'/'});
 });
-
-/**
- * Controller for handling the services list
- */
-function ServiceList($scope, Service) {
-	$scope.services = Service.all();
-}
-
-function ServiceController($scope, $location, $routeParams, Service) {
-	var self = this;
-
-	Service.get({name: $routeParams.name}, function(service) {
-		self.original = service;
-		$scope.service = new Service(self.original);
-	});
-
-	$scope.destroy = function() {
-		self.original.destroy(function() {
-			$location.path('/');
-		});
-	};
-
-	$scope.save = function() {
-		self.service.update(function() {
-			$location.path('/');
-		});
-	};
-}
 
 function InstanceList($scope) {
 	$scope.instances = Instance.query();

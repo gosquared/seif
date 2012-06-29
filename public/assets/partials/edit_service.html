@@ -1,0 +1,53 @@
+<form>
+	<header>
+		<input ng-model="service.name">
+	</header>
+
+	<textarea ng-model="service.description"></textarea>
+
+	<dl>
+		<dt>Tags</dt>
+		<dd>
+			<input ng-model="service.tags">
+		</dd>
+
+		<dt>Instances</dt>
+		<dd>
+			<input ng-model="service.instances">
+		</dd>
+		
+		<!--<dt>Shell Profile</dt>
+		<dd>
+			<div ng-repeat="variable in service.shell_profile.keys"><b>{{variable.</div><br>
+		</dd>-->
+		
+		<dt>Repository</dt>
+		<dd>
+			<input ng-model="service.repository.url"><br/>
+			<select style="float:none;">
+				<option>Git</option>
+				<option>Subversion</option>
+				<option>CVS</option>
+				<option>Dropbox</option>
+			</select><br/>
+			<input ng-model="service.repository.subdir"><br/>
+		</dd>
+
+		<dt>TCP Socket</dt>
+		<dd>
+			<input ng-model="service.tcp_socket">
+		</dd>
+
+		<dt>Unix Socket</dt>
+		<dd>
+			<input ng-model="service.unix_socket">
+		</dd>
+
+		<dt>Jenkins</dt>
+		<dd>
+			<input ng-model="service.jenkins">
+		</dd>
+	</dl>
+
+	<input type="submit" value="Save">
+</form>
