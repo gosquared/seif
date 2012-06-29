@@ -32,3 +32,13 @@ Only pull requests with tests will be considered.
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+
+## API integration
+
+To make sure that you have all the required gems installed, just `bundle`.
+
+```bash
+bundle exec foreman start
+open http://localhost:9000/resources
+```
