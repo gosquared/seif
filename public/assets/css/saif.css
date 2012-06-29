@@ -23,6 +23,10 @@ h1 {
 	font-size: 40px;
 	line-height: 40px;
 }
+	h1 a {
+		text-decoration: none;
+		color: #8ea1ab;
+	}
 
 b {
 	font-weight: 500;

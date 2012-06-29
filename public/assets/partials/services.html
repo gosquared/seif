@@ -1,5 +1,5 @@
 <header>
-	<h1>Showing {{search.instances}} services</h1>
+	<h1>Showing {{search.instances | filter_description}} services</h1>
 	
 	<select class="instances" ng-model="search.instances">
 		<option selected value="">All</option>
@@ -9,11 +9,11 @@
 		<option value="ruby-2">ruby-2</option>
 	</select>
 </header>
-
+<h1>{{services | filter:search | no_services_description}}</h1>
 <ul class="services">
 	<li ng-repeat="service in services | filter:search | orderBy:'name'">
 		<a href="#/service/{{service.name}}">
-			<h2>{{service.name}} <span class="status {{service.active}}" title="Check whether the service is up. If it's green, it's up."></span></h2>
+			<h2>{{service.name}}</span></h2>
 			<p>{{service.description}}</p>
 			
 			<small><b>Instances:</b>
