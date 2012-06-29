@@ -1,19 +1,17 @@
 <header>
 	<h1>Showing all services</h1>
 	
-	<select class="instances">
-		<option selected>All</option>
-		<option>nodejs-1</option>
-		<option>nodejs-2</option>
-		<option>nodejs-3</option>
-		<option>aspnet-1</option>
-		<option>aspnet-2</option>
-		<option>php-1</option>
+	<select class="instances" ng-model="search.instances">
+		<option selected value="">All</option>
+		<option value="nodejs-1">nodejs-1</option>
+		<option value="nodejs-2">nodejs-2</option>
+		<option value="ruby-1">ruby-1</option>
+		<option value="ruby-2">ruby-2</option>
 	</select>
 </header>
 
 <ul class="services">
-	<li ng-repeat="service in services | orderBy:'name'">
+	<li ng-repeat="service in services | filter:search | orderBy:'name'">
 		<a href="#/service/{{service.name}}">
 			<h2>{{service.name}}</h2>
 			<p>{{service.description}}</p>
