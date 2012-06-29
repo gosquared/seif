@@ -14,4 +14,5 @@ angular.module('instance', ['ngResource']).factory('Instance', function($resourc
 	Instance.prototype.update = function(callback) {
 		//return Instance.update()
 	};
+	return Instance;
 });

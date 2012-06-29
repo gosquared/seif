@@ -16,8 +16,8 @@ body {
 	width: 980px;
 	margin: 50px auto;
 }
-	body.error { background: #c6423b; }
-	body.success { background: #7bbe2c; }
+	body.error, .status.false { background: #c6423b; }
+	body.success, .status.true { background: #7bbe2c; }
 	
 h1 {
 	font-size: 40px;
@@ -129,6 +129,25 @@ select.instances {
 				display: block;
 				font-size: 13px;
 			}
+			.services li small span {
+				padding-left: 20px;
+			}
+			
+dl {
+	position: relative;
+	overflow: hidden;
+}
+			
+.status {
+	position: relative;
+	top: -4px;
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+
+	background: #e8cb7d;
+}
 			
 footer {
 	opacity: .3;

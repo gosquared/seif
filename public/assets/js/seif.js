@@ -5,7 +5,7 @@ angular.module('seif', ['service']).config(function($routeProvider) {
 		$routeProvider.
 		when('/', {
 			controller:ServiceList, templateUrl:'/assets/partials/services.html'}).
-		when('/service/:id', {
+		when('/service/:name', {
 			controller:ServiceController, templateUrl:'/assets/partials/service.html'}).
 		otherwise({redirectTo:'/'});
 });

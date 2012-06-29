@@ -1,17 +1,27 @@
 <header>
-	<h1>{{service.name}}</h1>
+	<h1>{{service.name}} <span class="status"></span></h1>
 </header>
 
 <p>{{service.description}}</p>
 
-<h4>Tags</h4>
-<p>tag, tag, tag</p>
+<dl>
+	<dt>Tags</dt>
+	<dd>
+		<span class="tag" ng-repeat="tag in service.tags">{{tag}}</span>
+	</dd>
 
-<h4>Profile</h4>
-key => value<br/>
-key => value<br/>
-
-<h4>Repository</h4>
-<b>URL:</b> {{service.repository.url}}<br/>
-<b>Directory:</b> {{service.repository.subdir}}<br/>
-<b>URL:</b> {{service.repository.type}}
+	<dt>Instances</dt>
+	<dd>
+		<span class="tag" ng-repeat="instance in service.instances">{{instance}}</span>
+	</dd>
+	
+	<!--<dt>Shell Profile</dt>
+	<dd>
+		<div ng-repeat="variable in service.shell_profile.keys"><b>{{variable.</div><br>
+	</dd>-->
+	
+	<dt>Repository</dt>
+	<dd>{{service.repository.url}}</dd>
+	<dd>{{service.repository.type}}</dd>
+	<dd><b>Sub Directory:</b> {{service.repository.subdir}}</dd>
+</dl>

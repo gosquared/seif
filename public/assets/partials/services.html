@@ -13,7 +13,7 @@
 <ul class="services">
 	<li ng-repeat="service in services | filter:search | orderBy:'name'">
 		<a href="#/service/{{service.name}}">
-			<h2>{{service.name}}</h2>
+			<h2>{{service.name}} <span class="status {{service.active}}" title="Check whether the service is up. If it's green, it's up."></span></h2>
 			<p>{{service.description}}</p>
 			
 			<small><b>Used on:</b>
