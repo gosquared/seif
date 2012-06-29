@@ -1,0 +1,16 @@
+[
+  {
+    "name": "crossgrade",
+    "description": "GoSquared 4.0 upgrade pre-requisite, Paypal to Recurly upgrade",
+    "tags": ["ruby", "1.9.3"],
+    "instances": ["ruby-1", "ruby-2"],
+    "active": "true"
+  },
+  {
+    "name": "thumbs",
+    "description": "Reverse proxy to url2png.com for website screenshot thumbnails",
+    "tags": ["ruby", "1.9.2"],
+    "instances": ["ruby-1"],
+    "active": "false"
+  }
+]

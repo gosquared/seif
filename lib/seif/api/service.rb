@@ -18,6 +18,8 @@ module Seif
       error_format :json
 
       helpers Helpers
+      # MOCKS, remove when the models are up
+      mocks_path = File.expand_path("../mocks", __FILE__)
 
       before { authorize! }
 
@@ -36,8 +38,12 @@ module Seif
         end
 
         resources :services do
+          get do
+            Oj.load(File.read("#{mocks_path}/services.json"))
+          end
+
           get '/crossgrade' do
-            Oj.load(File.read(File.expand_path("../crossgrade.json", __FILE__)))
+            Oj.load(File.read("#{mocks_path}/crossgrade.json"))
           end
         end
       end
