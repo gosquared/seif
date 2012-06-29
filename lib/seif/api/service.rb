@@ -30,7 +30,7 @@ module Seif
         end
       end
 
-      version 'v1', :using => :header, :vendor => 'seif' do
+      version 'v1', :using => :path do
         get '/version' do
           'v1'
         end
@@ -42,7 +42,7 @@ module Seif
         end
       end
 
-      version 'v2', :using => :header, :vendor => 'seif' do
+      version 'v2', :using => :path do
         get '/version' do
           'v2'
         end
