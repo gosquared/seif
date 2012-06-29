@@ -32,6 +32,15 @@ b {
 	font-weight: 500;
 }
 
+pre, code {
+	display: inline-block;
+	padding: 2px 8px;
+	margin-left: -8px;
+
+	background: #fff8ec;
+	color: #937b51;
+}
+
 p {
 	color: #8ea1ab;
 }
@@ -156,7 +165,10 @@ select.instances {
 				font-size: 13px;
 			}
 			.services li small span {
-				padding-right: 20px;
+				position: relative;
+				top: 8px;
+				margin-left: -10px;
+				margin-right: 15px;
 			}
 		.services li small + small {
 			left: 800px;
@@ -177,11 +189,11 @@ dl {
 	dd {
 		float: left;
 		width: 750px;
-		padding-bottom: 10px;
+		padding-bottom: 15px;
 	}
 		dd small {
 			display: block;
-			padding-top: 10px;
+			padding-top: 5px;
 			
 			opacity: .7;
 		}
@@ -206,5 +218,9 @@ footer {
 }
 
 .tag {
-	padding-right: 20px;
+	margin-right: 10px;
+	background: rgba(161,207,233,.2);
+	padding: 5px 16px;
+	
+	border-radius: 20px;
 }

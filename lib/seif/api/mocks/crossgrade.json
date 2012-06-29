@@ -21,51 +21,31 @@
   "web_server": [
     {
       "domains": "crossgrade.gosquared.com crossgrade.gosquared.com.local",
-      "ports": [80, 443, 8443],
       "public_path": "app/public",
-      "upstreams": [
-        "unix:/tmp/crossgrade.sock",
-        "ruby-1:5015",
-        "ruby-2:5015"
-      ],
       "nginx": {
-        "crossgrade_80": {
-          "listen": [80],
-          "server_name": "crossgrade.gosquared.com crossgrade.gosquared.com.local",
-          "public_path": "app/public",
-          "custom_directives": [
-            "return 301 https://$host$request_uri;"
-          ]
-        },
-        "crossgrade_443": {
-          "listen": [443],
-          "server_name": "crossgrade.gosquared.com crossgrade.gosquared.com.local",
-          "public_path": "app/public",
-          "locations": [
-            {
-              "path": "/",
-              "directives": [
-                "proxy_pass http://crossgrade_upstream;"
-              ]
-            }
-          ],
-          "custom_directives": [
-            "ssl on;"
-          ]
-        },
-        "crossgrade_8443": {
-          "listen": [8443],
-          "server_name": "crossgrade.gosquared.com crossgrade.gosquared.com.local",
-          "public_path": "app/public",
-          "locations": [
-            {
-              "path": "/",
-              "directives": [
-                "proxy_pass http://crossgrade_upstream;"
-              ]
-            }
-          ]
-        }
+        "locations": [
+          {
+            "path": "/",
+            "directives": [
+              "proxy_pass http://crossgrade_upstream;"
+            ],
+            "ports": [443, 8443]
+          }
+        ],
+        "custom_directives": [
+          {
+            "directives": [
+              "return 301 https://$host$request_uri;"
+            ],
+            "ports": [80]
+          },
+          {
+            "directives": [
+              "ssl on;"
+            ],
+            "ports": [443]
+          }
+        ]
       }
     }
   ],
