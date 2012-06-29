@@ -24,6 +24,10 @@ h1 {
 	line-height: 40px;
 }
 
+b {
+	font-weight: 500;
+}
+
 p {
 	color: #8ea1ab;
 }
@@ -171,6 +175,12 @@ dl {
 		width: 750px;
 		padding-bottom: 10px;
 	}
+		dd small {
+			display: block;
+			padding-top: 10px;
+			
+			opacity: .7;
+		}
 			
 .status {
 	position: relative;
