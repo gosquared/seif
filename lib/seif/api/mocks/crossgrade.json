@@ -2,7 +2,6 @@
   "name": "crossgrade",
   "description": "GoSquared 4.0 upgrade pre-requisite, Paypal to Recurly upgrade",
   "tags": ["ruby", "1.9.3"],
-  "active": "true",
   "repository": {
     "url": "git@github.com/gosquared/ruby",
     "type": "git",
@@ -12,30 +11,63 @@
     "RACK_ENV": "production",
     "APP_ENV": "production"
   },
+  "tcp_socket": 5015,
+  "unix_socket": "/tmp/crossgrade.sock",
+  "instances": [
+    "unix", // this means local unix socket
+    "ruby-1",
+    "ruby-2"
+  ],
   "web_server": [
     {
       "domains": "crossgrade.gosquared.com crossgrade.gosquared.com.local",
-      "ports": ["80", "443"],
+      "ports": [80, 443, 8443],
       "public_path": "app/public",
+      "upstreams": [
+        "unix:/tmp/crossgrade.sock",
+        "ruby-1:5015",
+        "ruby-2:5015"
+      ],
       "nginx": {
-        "custom_directives": [
-          "rewrite ^/account/upgrade/?$ /account/upgrade.html break;"
-        ],
-        "locations": [
-          {
-            "path": "/",
-            "directives": [
-              "proxy_pass http://crossgrade_ssl;"
-            ]
-          }
-        ]
+        "crossgrade_80": {
+          "listen": [80],
+          "server_name": "crossgrade.gosquared.com crossgrade.gosquared.com.local",
+          "public_path": "app/public",
+          "custom_directives": [
+            "return 301 https://$host$request_uri;"
+          ]
+        },
+        "crossgrade_443": {
+          "listen": [443],
+          "server_name": "crossgrade.gosquared.com crossgrade.gosquared.com.local",
+          "public_path": "app/public",
+          "locations": [
+            {
+              "path": "/",
+              "directives": [
+                "proxy_pass http://crossgrade_upstream;"
+              ]
+            }
+          ],
+          "custom_directives": [
+            "ssl on;"
+          ]
+        },
+        "crossgrade_8443": {
+          "listen": [8443],
+          "server_name": "crossgrade.gosquared.com crossgrade.gosquared.com.local",
+          "public_path": "app/public",
+          "locations": [
+            {
+              "path": "/",
+              "directives": [
+                "proxy_pass http://crossgrade_upstream;"
+              ]
+            }
+          ]
+        }
       }
     }
   ],
-  "jenkins": "rake && deliver -V",
-  "custom": {
-    "tcp_socket": 5015,
-    "unix_socket": "/tmp/crossgrade.sock",
-    "pid": "/var/run/crossgrade.pid"
-  }
+  "jenkins": "rake && deliver -V"
 }
