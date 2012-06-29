@@ -2,6 +2,8 @@ require 'bundler'
 Bundler.setup
 
 require 'grape'
+require 'oj'
+require 'json'
 
 require_relative 'helpers'
 require_relative '../models/customer'
@@ -25,6 +27,12 @@ module Seif
         desc 'The current page, showing details about all available routes'
         get do
           Service.routes.map { |route| route.instance_variable_get(:@options) }
+        end
+      end
+
+      resources :services do
+        get '/1' do
+          Oj.load(File.read(File.expand_path("../crossgrade.json", __FILE__)))
         end
       end
     end

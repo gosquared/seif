@@ -1,0 +1,34 @@
+{
+  "name": "crossgrade",
+  "description": "GoSquared 4.0 upgrade pre-requisite, Paypal to Recurly upgrade",
+  "tags": ["ruby", "1.9.3"],
+  "active": "true",
+  "repository": {
+    "url": "git@github.com/gosquared/ruby",
+    "subdir": "crossgrade"
+  },
+  "profile": {
+    "RACK_ENV": "production",
+    "APP_ENV": "production"
+  },
+  "domains": [
+    "crossgrade.gosquared.com",
+    "crossgrade.gosquared.com.local"
+  ],
+  "tcp_socket": 5015,
+  "nginx": [
+    {
+      "name": "crossgrade_ssl",
+      "listen": ["443"],
+      "public_path": "/home/crossgrade/app/public",
+      "locations": [
+        {
+          "path": "/",
+          "directives": [
+            "proxy_pass http://crossgrade_ssl;"
+          ]
+        }
+      ]
+    }
+  ]
+}
