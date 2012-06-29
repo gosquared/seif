@@ -36,7 +36,7 @@ module Seif
         end
 
         resources :services do
-          get '/1' do
+          get '/crossgrade' do
             Oj.load(File.read(File.expand_path("../crossgrade.json", __FILE__)))
           end
         end
