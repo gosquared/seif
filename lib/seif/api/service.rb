@@ -30,9 +30,21 @@ module Seif
         end
       end
 
-      resources :services do
-        get '/1' do
-          Oj.load(File.read(File.expand_path("../crossgrade.json", __FILE__)))
+      version 'v1', :using => :header, :vendor => 'seif' do
+        get '/version' do
+          'v1'
+        end
+
+        resources :services do
+          get '/1' do
+            Oj.load(File.read(File.expand_path("../crossgrade.json", __FILE__)))
+          end
+        end
+      end
+
+      version 'v2', :using => :header, :vendor => 'seif' do
+        get '/version' do
+          'v2'
         end
       end
     end
