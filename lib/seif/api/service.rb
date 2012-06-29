@@ -19,7 +19,7 @@ module Seif
 
       before { authorize! }
 
-      resources :doc do
+      resources :resources do
         # This should have been the default route, but grape requires a fix for this:
         # https://github.com/intridea/grape/issues/86
         desc 'The current page, showing details about all available routes'

@@ -15,9 +15,9 @@ module Seif
         Oj.load(last_response.body)
       end
 
-      describe "GET /doc" do
+      describe "GET /resources" do
         it "shows all available routes" do
-          get("/doc")
+          get("/resources")
           (%w[description method path params] - body.sample.keys).must_equal []
         end
       end
