@@ -5,30 +5,37 @@
   "active": "true",
   "repository": {
     "url": "git@github.com/gosquared/ruby",
+    "type": "git",
     "subdir": "crossgrade"
   },
-  "profile": {
+  "shell_profile": {
     "RACK_ENV": "production",
     "APP_ENV": "production"
   },
-  "domains": [
-    "crossgrade.gosquared.com",
-    "crossgrade.gosquared.com.local"
-  ],
-  "tcp_socket": 5015,
-  "nginx": [
+  "web_server": [
     {
-      "name": "crossgrade_ssl",
-      "listen": ["443"],
-      "public_path": "/home/crossgrade/app/public",
-      "locations": [
-        {
-          "path": "/",
-          "directives": [
-            "proxy_pass http://crossgrade_ssl;"
-          ]
-        }
-      ]
+      "domains": "crossgrade.gosquared.com crossgrade.gosquared.com.local",
+      "ports": ["80", "443"],
+      "public_path": "app/public",
+      "nginx": {
+        "custom_directives": [
+          "rewrite ^/account/upgrade/?$ /account/upgrade.html break;"
+        ],
+        "locations": [
+          {
+            "path": "/",
+            "directives": [
+              "proxy_pass http://crossgrade_ssl;"
+            ]
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "jenkins": "rake && deliver -V",
+  "custom": {
+    "tcp_socket": 5015,
+    "unix_socket": "/tmp/crossgrade.sock",
+    "pid": "/var/run/crossgrade.pid"
+  }
 }
