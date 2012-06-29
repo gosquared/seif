@@ -1,7 +1,5 @@
 require File.expand_path('../config.rb', __FILE__)
 
-root = Seif::API::Config::BASEDIR
-
 # Sample verbose configuration file for Unicorn (not Rack)
 #
 # This configuration file documents many features of Unicorn
