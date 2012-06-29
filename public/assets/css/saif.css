@@ -4,6 +4,8 @@
 	
 	outline: none;
 	
+	-webkit-font-smoothing: antialiased;
+	
 	-webkit-transition: opacity .25s, background-color .25s, color .25s, border-color .25s;
 	transition: opacity .25s, background-color .25s, color .25s, border-color .25s;
 }
@@ -26,7 +28,14 @@ h1 {
 	h1 a {
 		text-decoration: none;
 		color: #8ea1ab;
+		font-weight: lighter;
+		font-size: 32px;
+		
+		opacity: .5;
 	}
+		h1 a:hover {
+			opacity: 1;
+		}
 
 b {
 	font-weight: 500;
