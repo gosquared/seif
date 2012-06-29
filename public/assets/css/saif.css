@@ -4,8 +4,8 @@
 	
 	outline: none;
 	
-	-webkit-transition: opacity .25s, background-color .25s, color .25s;
-	transition: opacity .25s, background-color .25s, color .25s;
+	-webkit-transition: opacity .25s, background-color .25s, color .25s, border-color .25s;
+	transition: opacity .25s, background-color .25s, color .25s, border-color .25s;
 }
 
 body {
@@ -23,6 +23,25 @@ h1 {
 	font-size: 40px;
 	line-height: 40px;
 }
+
+p {
+	color: #8ea1ab;
+}
+	#content header + span + p, #content header + p {
+		position: relative;
+		top: -10px;
+		margin-bottom: -10px;
+	}
+
+p a, dd a {
+	color: #579ec7;
+	text-decoration: none;
+	border-bottom: 1px solid #cae4f3;
+}
+	p a:hover, dd a:hover {
+		color: #3f87b0;
+		border-bottom: 1px solid #a0cae2;
+	}
 
 select.instances {
 	-webkit-appearance: none;
@@ -117,26 +136,41 @@ select.instances {
 			}
 		.services li small {
 			position: absolute;
-			right: 40px;
+			left: 600px;
 			top: 50%;
 			margin-top: -18px;
 			
 			font-size: 15px;
 			line-height: 18px;
-			text-align: right;
 		}
 			.services li small b {
 				display: block;
 				font-size: 13px;
 			}
 			.services li small span {
-				padding-left: 20px;
+				padding-right: 20px;
 			}
+		.services li small + small {
+			left: 800px;
+		}
 			
 dl {
 	position: relative;
 	overflow: hidden;
+	
+	padding-top: 40px;
 }
+	dt {
+		font-weight: bold;
+		float: left;
+		font-weight: bold;
+		width: 150px;
+	}
+	dd {
+		float: left;
+		width: 750px;
+		padding-bottom: 10px;
+	}
 			
 .status {
 	position: relative;
