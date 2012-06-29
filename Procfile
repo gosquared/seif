@@ -1,1 +1,1 @@
-api: bundle exec unicorn -c lib/seif/api/unicorn.conf.rb
+api: bundle exec unicorn lib/seif/api/config.ru --config-file lib/seif/api/unicorn.conf.rb
