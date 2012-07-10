@@ -6,9 +6,6 @@ require 'oj'
 require 'json'
 
 require_relative 'helpers'
-require_relative '../models/customer'
-require_relative '../models/service'
-require_relative '../models/subscription'
 
 module Seif
   module API
