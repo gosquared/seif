@@ -29,7 +29,7 @@ module Seif
 
       version 'v1', :using => :path do
         get '/version' do
-          'v1'
+          { :version => 'v1' }
         end
 
         resources :services do
@@ -45,7 +45,7 @@ module Seif
 
       version 'v2', :using => :path do
         get '/version' do
-          'v2'
+          { :version => 'v2' }
         end
       end
     end
